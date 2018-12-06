@@ -1,0 +1,53 @@
+package [servicePackage];
+
+import java.util.List;
+import java.util.Map;
+
+import com.zakj.entity.[model].[entityClass];
+
+/**
+ * 
+ * 类描述:   [descritpion]
+ * 创建人:   [author]
+ * 创建时间: [date]
+ *
+ * @version  1.0
+ */
+public interface [entityClass]Service {
+	
+	/**
+	 * list查询
+	 *
+	 * @param params 参数
+	 */
+	Map<String,Object> getList(Map<String,Object> params);
+
+	/**
+	 * 新增
+	 *
+	 * @param obj 对象
+	 */
+	void save([entityClass] obj);
+
+	/**
+	 * 修改
+	 *
+	 * @param obj 对象
+	 */
+	void update([entityClass] obj);
+
+	/**
+	 * 删除
+	 *
+	 * @param ids id
+	 */
+	void deleteByIds(String ids);
+
+	/**
+	 * 通过id返回对象
+	 *
+	 * @param id id
+	 */
+	[entityClass] getObjById(String id);
+		
+}

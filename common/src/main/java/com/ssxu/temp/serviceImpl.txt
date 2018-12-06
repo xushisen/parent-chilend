@@ -1,0 +1,75 @@
+package [serviceImplPackage];
+
+import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
+
+import com.zakj.mytag.Page;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.zakj.service.base.impl.BaseServiceImpl;
+
+import [daoPackage].[entityClass]Dao;
+import [entityPackage].[entityClass];
+import [servicePackage].[entityClass]Service;
+
+/**
+ * 
+ * 类描述:   [descritpion]
+ * 创建人:   [author]
+ * 创建时间: [date]
+ *
+ * @version  1.0
+ */
+@Service
+public class [entityClass]ServiceImpl extends BaseServiceImpl implements [entityClass]Service {
+	@Autowired
+	private [entityClass]Dao [lowerEntity]Dao;
+
+	/**
+	 * list查询
+	 *
+	 * @param params 参数
+	 */
+	@Override
+	public Map<String,Object> getList(Map<String,Object> params){
+		Map<String,Object> pageMap = Page.getPageMap(params);
+		return resultMap(pageMap, [lowerEntity]Dao.getList(pageMap));
+	}
+	
+	/**
+	 * 新增
+	 *
+	 * @param obj 对象
+	 */
+	@Override
+	public void save([entityClass] obj){
+		[lowerEntity]Dao.save(obj);
+	}
+
+	/**
+	 * 修改
+	 *
+	 * @param obj 对象
+	 */
+	@Override
+	public void update([entityClass] obj){
+		[lowerEntity]Dao.update(obj);
+	}
+
+	/**
+	 * 通过id返回对象
+	 */
+	@Override
+	public [entityClass] getObjById(String id){
+		return [lowerEntity]Dao.getObjById(id);
+	}
+	
+	/**
+	 * 删除
+	 */
+	@Override
+	public void deleteByIds(String ids){
+		[lowerEntity]Dao.deleteByIds(ids.split(","));
+	}
+}

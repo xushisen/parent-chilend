@@ -11,6 +11,7 @@
     <modules>
         <module>web</module>
         <module>erueka</module>
+        <module>common</module>
     </modules>
 
     <parent>
@@ -25,6 +26,14 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+        <!-- 阿里json-->
+        <alibaba-json.version>1.2.32</alibaba-json.version>
+        <!-- 阿里云上传 -->
+        <alibaban-sdk.version>2.5.0</alibaban-sdk.version>
+        <!-- excel 导入导出 -->
+        <excel.version>3.15-beta2</excel.version>
+        <!-- mybatis -->
+        <mybatis.starter.version>1.3.2</mybatis.starter.version>
     </properties>
 
     <dependencies>
@@ -44,6 +53,30 @@
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <!-- 阿里json -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${alibaba-json.version}</version>
+            </dependency>
+            <!-- 阿里云上传 -->
+            <dependency>
+                <groupId>com.aliyun.oss</groupId>
+                <artifactId>aliyun-sdk-oss</artifactId>
+                <version>${alibaban-sdk.version}</version>
+            </dependency>
+            <!-- excel 导入导出 -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${excel.version}</version>
+            </dependency>
+            <!-- mybatis -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.starter.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

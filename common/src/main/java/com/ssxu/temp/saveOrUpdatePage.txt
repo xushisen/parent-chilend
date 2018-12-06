@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" type="text/css" href="${ctx.contextPath}/css/biaoge.css"/>
+</head>
+  
+<body>
+    <div class="savecon">
+        <form id="form">
+            <div class="saveL">姓名:</div>
+            <div class="saveR">
+                <input type="hidden" name="" value="${obj.}" />
+                <input type="text" name="" value="${obj.}" />
+            </div>
+            <div class="saveL">email:</div>
+            <div class="saveR"><input type="text" autocomplete="off" placeholder="请输入姓名" name="userEmail" value="${(obj.userEmail)!''}" /></div>
+        </form>
+    </div>
+    <div class="savesearch">
+        <a href="javascript:;"><i class="fa fa-save"></i>保存</a>
+    </div>
+    <script type="text/javascript" src="${ctx.contextPath}/js/jquery/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="${ctx.contextPath}/js/util/tcUtil.min.js"></script>
+    <script type="text/javascript">
+
+         /**
+          * 保存
+          */
+         $(".fa-save").parent().click(function (){
+             $.ajax({
+                url:getRootPath() + "[lowerEntity]/saveOrUpdate",
+                type: 'post',
+                dataType: 'json',
+                timeout: 3000,
+                data : $('#form').serialize(),
+                success: function (data, status) {
+                    $.ts({"content":data.msg,"direction":"around","code":data.code});
+                    if (data.code == 1){
+                        setTimeout(function (){
+                            window.parent.location.href=getRootPath() + "[lowerEntity]/list";
+                        },1000);
+                    }
+                },
+                error: function (err, status) {
+                    $.ts({"content":"网络异常,操作失败","direction":"around","code":"0"});
+                }
+            });
+         });
+    </script>
+</body>
+</html>
