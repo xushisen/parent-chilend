@@ -1,10 +1,11 @@
 package com.ssxu.util.aliyun;
 
-import com.zakj.entity.Ajax;
-import com.zakj.exception.AjaxUtil;
-import com.zakj.exception.MyException;
-import com.zakj.util.FileUtils;
-import com.zakj.util.StringUtils;
+
+import com.ssxu.entity.Ajax;
+import com.ssxu.exception.AjaxUtil;
+import com.ssxu.exception.MyException;
+import com.ssxu.util.FileUtils;
+import com.ssxu.util.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
