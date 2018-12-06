@@ -12,6 +12,7 @@
         <module>web</module>
         <module>erueka</module>
         <module>common</module>
+        <module>producer</module>
     </modules>
 
     <parent>
