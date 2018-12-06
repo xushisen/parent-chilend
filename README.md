@@ -1,0 +1,1 @@
+自己搭建的maven父子工程  包括spring-cloud的大部分功能
