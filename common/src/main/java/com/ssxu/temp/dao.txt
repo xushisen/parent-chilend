@@ -1,0 +1,65 @@
+package [daoPackage];
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.stereotype.Repository;
+
+import [entityPackage].[entityClass];
+
+/**
+ * 
+ * 类描述:   [descritpion]
+ * 创建人:   [author]
+ * 创建时间: [date]
+ *
+ * @version  1.0
+ */
+@Repository
+public interface [entityClass]Dao {
+	
+	/**
+	 * list查询
+	 *
+	 * @param params 参数
+	 * @return 返回的数据
+	 */
+	List<Map<String,Object>> getList(Map<String,Object> params);
+	
+	/**
+	 * 总数
+	 *
+	 * @param params  参数
+	 * @return  数量
+	 */
+	int getCount(Map<String,Object> params);
+	
+	/**
+	 * 新增
+	 *
+	 * @param obj 实体对象
+	 */
+	void save([entityClass] obj);
+	
+	/**
+	 * 修改
+	 *
+	 * @param obj 实体对象
+	 */
+	void update([entityClass] obj);
+	
+	/**
+	 * 删除
+	 *
+	 * @param ids id
+	 */
+	void deleteByIds(String[] ids);
+	
+	/**
+	 * 通过id返回对象
+	 *
+	 * @param id id
+	 * @return 对应的对象
+	 */
+	[entityClass] getObjById(String id);
+}  

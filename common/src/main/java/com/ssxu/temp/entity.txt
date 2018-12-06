@@ -1,0 +1,14 @@
+package [entityPackage];
+
+import java.util.Date;
+
+/**
+ * 
+ * 类描述:   [descritpion]
+ * 创建人:   [author]
+ * 创建时间: [date]
+ *
+ * @version  1.0
+ */
+public class [entityClass]{
+

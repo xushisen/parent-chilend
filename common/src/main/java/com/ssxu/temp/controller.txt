@@ -1,0 +1,95 @@
+package [controllerPackage];
+
+import java.util.Map;
+
+import com.zakj.annotation.Log;
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.zakj.controller.BaseController;
+import [servicePackage].[entityClass]Service;
+
+/**
+ * 
+ * 类描述:   [descritpion]
+ * 创建人:   [author]
+ * 创建时间: [date]
+ *
+ * @version  1.0
+ */
+@Controller
+@RequestMapping("/[lowerEntity]")
+public class [entityClass]Controller extends BaseController{
+
+	private Logger logger = LoggerFactory.getLogger(getClass());
+	@Resource  
+    private [entityClass]Service [lowerEntity]Service;
+	
+	/**
+	 * list查询
+	 *
+	 * @return 对应的摸板地址
+	 */
+	@RequestMapping("/list")
+	public String list(HttpServletRequest request, Map<String, Object> map){
+		logger.info("进入了list");
+		map.put("name", "Joe");
+		map.put("list", [lowerEntity]Service.getList(getRequestParams(request)));
+		return "[model]/[lowerEntity]/list";
+	}
+
+    /**
+	 * 新增修改页面
+	 *
+	 * @return 对应的摸板地址
+	 */
+	@RequestMapping("/saveOrUpdatePage")
+	public String saveOrUpdatePage(String id, Map<String, Object> map){
+        logger.info("新增修改页面");
+        if (StringUtils.isNotEmpty(id)){
+            map.put("obj",[lowerEntity]Service.getObjById(id));
+        }
+        return "[model]/[lowerEntity]/saveOrUpdatePage";
+	}
+
+	/**
+     * 新增修改功能
+     *
+     * @return 对应的摸板地址
+     */
+    @RequestMapping("/saveOrUpdate")
+    @ResponseBody
+    @Log(modelName = )
+    public String saveOrUpdate(entityClass lowerEntity){
+        logger.info("新增修改功能");
+        if (StringUtils.isEmpty(lowerEntity.getAccountId())){
+            // 新增
+            lowerEntity.setAccountId(StringUtils.getUUID());
+            [lowerEntity]Service.save(pac);
+        } else {
+            // 修改
+            [lowerEntity]Service.update(pac);
+        }
+        return AjaxUtil.success("保存成功");
+    }
+
+    /**
+     * 删除
+     *
+     * @return 对应的摸板地址
+     */
+    @RequestMapping("/del")
+    @ResponseBody
+    @Log(modelName = )
+    public Ajax delAccount(String ids) {
+        logger.info("进入了delAccount");
+        [lowerEntity]Service.deleteByIds(ids);
+        return AjaxUtil.success("删除成功！");
+    }
+}
