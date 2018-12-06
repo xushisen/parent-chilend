@@ -1,0 +1,16 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: producer
+
+eureka:
+  instance:
+    # true 使用IP注册
+    preferIpAddress: true
+    # 心跳间隔
+    lease-renewal-interval-in-seconds: 3
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
