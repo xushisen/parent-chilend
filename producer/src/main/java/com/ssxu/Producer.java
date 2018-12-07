@@ -2,6 +2,7 @@ package com.ssxu;
 
 import com.ssxu.entity.Ajax;
 import com.ssxu.exception.AjaxUtil;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -17,9 +18,18 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("producer")
 public class Producer {
 
+    @Value("${server.port}")
+    String serverPort;
+
     @RequestMapping("/getData")
     @ResponseBody
     public Ajax getData(String params){
-        return AjaxUtil.success("我是生产者返回给消费者的数据====>>>客户端给的参数=="+params);
+        StringBuilder sb = new StringBuilder();
+        sb.append("我是生产者返回给消费者的数据====>>>");
+        sb.append("客户端给的参数==");
+        sb.append(params);
+        sb.append("端口号=====>>>");
+        sb.append(serverPort);
+        return AjaxUtil.success(sb.toString());
     }
 }
