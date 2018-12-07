@@ -27,7 +27,7 @@ eureka:
     serviceUrl:
       # 集群配置这里写的是对方的eureka.instance.hostname值加上对方的server.port 不集群使用下面的注册地址
       # defaultZone: http://eureka2:8762/eureka
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://localhost:8761/eureka/
   server:
     # 关闭自我保护模式
     enable-self-preservation: false
