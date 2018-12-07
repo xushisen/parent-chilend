@@ -19,7 +19,7 @@ public class Producer {
 
     @RequestMapping("/getData")
     @ResponseBody
-    public Ajax getData(){
-        return AjaxUtil.success("哈哈");
+    public Ajax getData(String params){
+        return AjaxUtil.success("我是生产者返回给消费者的数据====>>>客户端给的参数=="+params);
     }
 }
