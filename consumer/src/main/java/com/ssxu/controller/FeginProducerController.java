@@ -1,7 +1,6 @@
 package com.ssxu.controller;
 
 import com.ssxu.entity.Ajax;
-import com.ssxu.exception.AjaxUtil;
 import com.ssxu.exception.MyException;
 import com.ssxu.fegin.Producer;
 import com.ssxu.util.StringUtils;
@@ -10,7 +9,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
 
@@ -32,7 +30,7 @@ public class FeginProducerController {
 
     @RequestMapping("/getProducerData")
     @ResponseBody
-    public Ajax getProducerData(String params){
+    public Ajax getProducerData(String params) {
         logger.info("进入了调用生产者方法");
         if (StringUtils.isEmpty(params))
             throw new MyException("params不能为空");

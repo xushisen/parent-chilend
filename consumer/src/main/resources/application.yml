@@ -17,4 +17,5 @@ eureka:
 
 feign:
   hystrix:
+    # fegin fallback
     enabled: true
