@@ -30,7 +30,7 @@ public class ExceptionHandle {
     @ExceptionHandler(value = MyPageException.class)
     public ModelAndView myPageExceptionHandle(MyPageException ex) {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("error/500");
+        modelAndView.setViewName("error/msg");
         modelAndView.addObject("msg", ex.getMessage());
         return modelAndView;
     }
