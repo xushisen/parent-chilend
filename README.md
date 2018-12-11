@@ -23,5 +23,3 @@ service service层项目
 dao dao层项目
 
 entity 实体类项目
-
-ds dasd 
