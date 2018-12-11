@@ -14,6 +14,9 @@
         <module>common</module>
         <module>producer</module>
         <module>consumer</module>
+        <module>service</module>
+        <module>dao</module>
+        <module>entity</module>
     </modules>
 
     <parent>
@@ -36,6 +39,10 @@
         <excel.version>3.15-beta2</excel.version>
         <!-- mybatis -->
         <mybatis.starter.version>1.3.2</mybatis.starter.version>
+        <!-- 阿里巴巴数据源 -->
+        <alibaba.druid>1.0.26</alibaba.druid>
+        <!-- freemarker -->
+        <freemarker>2.0.2.RELEASE</freemarker>
     </properties>
 
     <dependencies>
@@ -79,6 +86,18 @@
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis.starter.version}</version>
+            </dependency>
+            <!-- 引入freeMarker的依赖包. -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-freemarker</artifactId>
+                <version>${freemarker}</version>
+            </dependency>
+            <!-- druid数据源 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${alibaba.druid}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
