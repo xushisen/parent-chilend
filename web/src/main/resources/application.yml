@@ -1,38 +1,55 @@
 server:
-  port: 8761
+  port: 8080
 
 spring:
   application:
-    name: eureka-server
+    name: web
+  # freemarker 配置
+  freemarker:
+      allow-request-override: false
+      # 缓存是否开启 true开启
+      cache: false
+      # 配合cache使用 cache true 这个需要写时间
+      settings.template_update_delay: 0
+      check-template-location: true
+      charset: UTF-8
+      content-type: text/html
+      expose-request-attributes: false
+      expose-session-attributes: false
+      expose-spring-macro-helpers: false
+      request-context-attribute: ctx
+  # jdbc
+  datasource:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/za_edu_cloud_platform_auth?characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull
+      username: root
+      password: 666666
+  # 时间戳统一转换
+  jackson:
+    date-format: yyyy-MM-dd
+    time-zone: GMT+8
 
 eureka:
   instance:
-    hostname: eureka1
     # true 使用IP注册
     preferIpAddress: true
     # 心跳间隔
     lease-renewal-interval-in-seconds: 3
-    # 服务失效时间： 如果多久没有收到请求，则可以删除服务
-    lease-expiration-duration-in-seconds: 7
   client:
-    # 关闭eureka client
-    # enabled: false
-    # 客户端从Eureka Server集群里更新Eureka Server信息的频率
-    eureka-service-url-poll-interval-seconds: 60
-    # 注册自身到eureka服务器
-    register-with-eureka: false
-    # 表示是否从eureka服务器获取注册信息
-    fetch-registry: false
-    # 设置eureka服务器所在的地址，查询服务和注册服务都需要依赖这个地址
-    serviceUrl:
-      # 集群配置这里写的是对方的eureka.instance.hostname值加上对方的server.port 不集群使用下面的注册地址
-      # defaultZone: http://eureka2:8762/eureka
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-  server:
-    # 关闭自我保护模式
-    enable-self-preservation: false
-    # 设置清理间隔,单位为毫秒,默认为0
-    eviction-interval-timer-in-ms: 3000
-    # 集群之间相互更新节点信息的时间频率
-    # peer-eureka-nodes-update-interval-ms: 60000
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+feign:
+  hystrix:
+    # fegin fallback
+    enabled: true
+
+mybatis:
+  typeAliasesPackage: com.ssxu.entity
+  mapperLocations: classpath:mapper/**/*.xml
+  # 当返回值为空时 只是值为空 而不是把键直接去掉
+  configuration:
+    call-setters-on-nulls: true
+
 

@@ -1,0 +1,83 @@
+*{margin:0px;padding:0px;}
+/**start 复选框*/
+.checkK{margin-left:10px;width:10px;height:10px;background:#d7ebf9;border-radius:1px;position:relative;}
+.checkK_dian{width:5px;height:5px;background:red;border-radius:2px;position:absolute;top:50%;left:50%;margin-top:-3px;margin-left:-3px;}
+/**end 复选框*/
+
+/**start 美化a标签  background:red;font-size:10px;*/
+a{text-decoration:none;font-family:"微软雅黑";color:#2779aa;}
+a:hover{color:blue;}
+/**end 美化a标签*/
+
+/**start 表格开始*/
+.table{width:99%;margin:10px auto;border-collapse:collapse;}  /**border-collapse:collapse  为表格设置合并边框模型*/
+.table thead tr td{font-size:16px;text-indent:10px;color:#2779aa;}
+.table thead tr,.t_tab table tbody tr{margin:5px;height:30px; background: #d7ebf9; border: 1px #aed0ea solid; color: #2779aa;}
+.table tbody tr td{color:#949188;text-indent:10px;border:#e6e6e6 1px solid;}
+.table tbody tr{height:30px;} /**background:#fff; 由js代替
+.table tbody tr:nth-child(even) {background:#e7eeee;}*/
+.table tbody tr:hover{background:rgba(200,200,200,1);}
+/**end 表格结束*/
+
+/**菜单开始*/
+.caidan{width:100px;display:none;background:#d7ebf9;border-radius:4px;overflow:hidden;}
+.caidan ul{list-style:none;border:1px solid #8f8f8f;}
+.caidan ul li{width:100%;height:30px;line-height:30px;font-size:14px;text-align:center;color:#2779aa;}
+.caidan ul li i{display:inline-block;width:14px;font-size:14px;margin-right:5px;}
+.caidan ul li span{font-size:14px;}
+.caidan ul li:not(:last-child){border-bottom:1px solid #c5c5c5;}
+.caidan ul li:hover{background:#c5c5c5;cursor:pointer;}
+/**菜单结束*/
+
+/**搜索框开始*/
+/**如果外面的高度要根据里面的内容去撑   并且有浮动的话  里面的都不设置高度  里面自动撑  最外面的那个高度就是overflow:auto  .search 就是高度自适应的例子*/
+.text{width:99%;margin:0 auto;overflow:auto;padding-top:10px;}
+.text .searchD{width:200px;height:30px;border-radius:5px;overflow:hidden;float:left;margin:0 20px 10px 0;border:1px solid #aed0ea;}
+.text .searchD span{width:35%;height:100%;background:#d7ebf9;display:block;float:left;line-height:30px;text-indent:10px;color:#2779aa;}
+.text .searchD .inputText{float:right;width:65%;height:100%;border:0;outline:none;text-indent:10px;color:black;}
+.text .searchD select{width:130px;height:32px;}
+/**宽度自适应 inline-block  居中的话父div text-align:center;  ..buttom 就是宽度自适应的例子*/
+.b-center{width:10%;height:30px;margin:0 auto;text-align:center;}
+.b-center a,.text a{height:25px;display:inline-block;color:#2779aa;background:#d7ebf9;text-decoration:none;line-height:25px;border-radius:4px;letter-spacing:3px;padding:0 5px;}
+.text a{margin-right:10px;}
+/**搜索框结束*/
+
+/**自定义标签  S*/
+.page{display:inline-block;height:50px;float:right;margin-right:100px;}
+.page span{float:left;margin-right:10px;font-size:14px;}
+.page ul{float:right;}
+.page select{width:50px;height:22px;}
+.page ul li{list-style:none;float:left;margin:0px 2px;padding:0px 8px;border:1px solid #aed0ea;border-radius:3px;font-size:14px;font-family:"微软雅黑";color:#2779aa;}
+.page ul li:hover{cursor:pointer;color:#fff;background:#4BB1D1;}
+.page .bg{color:#fff;background:#4BB1D1;}
+.page ul input{width:20px;}
+.page ul a{margin-left:5px;width:25px;height:20px;display:inline-block;background:#4BB1D1;text-align:center;border-radius:3px;color:#fff;}
+/**自定义标签  E*/
+
+/**弹出框 S*/
+.popup{width:400px;height:400px;box-shadow:0 0 10px 1px black;position:absolute;top:0;bottom:0;right:0;left:0;margin:auto;}
+.popup .popup-title{width:100%;height:35px;background:#d7ebf9;line-height:35px;}
+.popup .popup-title .title-left{width:75%;height:100%;margin-left:10px;font-size:16px;font-family:"微软雅黑";color:#2779aa;float:left;}
+.popup .popup-title .title-right{color:#fff;font-size:20px;float:right;margin:10px 20px 0 0;border-radius:15px;text-align:center;line-height:17px;}
+.popup .popup-title .title-right:hover{cursor:pointer;}
+.popup .popup-content{width:100%;height:365px;background:#fff;}
+.popup .popup-content iframe{width:100%;height:100%;border:none;}
+/**遮罩层*/
+.zhezhao{width:100%;height:100%;position:fixed;top:0px;filter:alpha(opacity=60);background-color:#777;left:0px;opacity:0.5;-moz-opacity:0.5;}
+/**弹出框 E*/
+
+/**新增页面  S*/
+.savecon{margin-top:10px;width:90%;margin:10px auto;border-radius:6px;overflow:hidden;}
+.savecon input:not([type='radio']):not([type='checkbox']),select{border:1px solid #eee;outline:none;height:26px;text-indent:5px;width:180px;}
+.savecon .saveL{width:140px;background:#d7ebf9;height:30px;text-align:right;line-height:30px;float:left;margin:0 10px 10px 0;padding-right:10px;color:#2779aa;}
+.savecon .saveR{width:240px;height:30px;text-align:left;line-height:30px;float:left;margin-bottom:10px;}
+.savesearch{text-align:center;}
+.savesearch i{margin-right:5px;}
+.savesearch a{display:inline-block;border-radius:3px;height:30px;line-height:30px;padding:0 5px;background:#d7ebf9;color:#2779aa;}
+.savecon input[type='radio']{height:auto;}
+/**新增页面  E*/
+.title{width:calc(100% - 20px);height:40px;line-height:35px;padding-left:20px;font-size:16px;border-bottom:1px solid #DAD5D5;}
+.title a{color:red;text-decoration:none;font-size:16px;}
+/**导航 S*/
+.navigation{font-size:12px;height:30px;line-height:30px;text-indent:30px;border-bottom:1px solid #e5e5e5;color:#2779aa;}
+/**导航 E*/

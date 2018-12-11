@@ -13,14 +13,14 @@
   
 <body leftmargin=0 topmargin=0  oncontextmenu='return false' ondragstart='return false' onselectstart ='return false' onselect='document.selection.empty()' oncopy='document.selection.empty()' onbeforecopy='return false'>
     <!-- 搜索框开始 -->
-    <form action="${ctx.contextPath}/[lowerEntity]/list" method="post" >
+    <form action="${ctx.contextPath}/user/list" method="post" >
         <input type="hidden" id="pagebegin" name="pagebegin" >  <!-- 第几页 -->
         <input type="hidden" value="${list.page.pagesize?c}" id="pagesize" name="pagesize" >  <!-- 每页多少条 改变每页的数量只需要改变这个val就可以 -->
 
         <div class="text">
             <div class="searchD">
-               <span>名字:</span>
-               <input type="text" name="" autocomplete="off" placeholder="请输入姓名" class="inputText" value="${list.page.}" />
+               <span>账号:</span>
+               <input type="text" name="userLogin" autocomplete="off" placeholder="请输入姓名" class="inputText" value="${list.page.userLogin!''}" />
             </div>
             <div class="b-center">  <!-- 居中调整这个宽度 -->
                 <a href="javascript:;"><i class="fa fa-search"></i>查询</a>
@@ -37,21 +37,21 @@
             <tr>
                 <td><a href="javascript:;" onclick="xuan(this)">全选</a></td>
                 <td>序号</td>
-                <td>id</td>
+                <td>账号</td>
                 <td>操作</td>
             </tr>
         </thead>
         <tbody>
             <#if list.list?? && (list.list?size > 0)>
                 <#assign size = list.page.pagesize><#assign index = list.page.pagebegin><#assign cou = size * (index - 1)>
-                <#list list.list as [lowerEntity]>
+                <#list list.list as user>
                     <tr>
-                        <td><div class="checkK" data-num="${[lowerEntity].id}"></div></td>
-                        <td>${[lowerEntity]_index+1+cou}</td>
-                        <td>${[lowerEntity].id}</td>
+                        <td><div class="checkK" data-num="${user.userId}"></div></td>
+                        <td>${user_index+1+cou}</td>
+                        <td>${user.userLogin}</td>
                         <td>
-                            <a href="javascript:;" onclick="saveOrUpdatePage('[lowerEntity].id');">编辑</a>/
-                            <a href="javascript:;" onclick="del('[lowerEntity].id');">删除</a>
+                            <a href="javascript:;" onclick="saveOrUpdatePage('user.userId');">编辑</a>/
+                            <a href="javascript:;" onclick="del('user.userId');">删除</a>
                         </td>
                     </tr>
                 </#list>

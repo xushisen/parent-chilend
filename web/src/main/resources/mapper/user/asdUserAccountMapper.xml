@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssxu.dao.user.UserDao">
+    <resultMap id="BaseResultMap" type="com.ssxu.entity.user.AsdUserAccount">
+        <id column="USER_ID" property="userId" jdbcType="CHAR" />
+        <result column="USER_LOGIN" property="userLogin" jdbcType="VARCHAR" />
+        <result column="USER_PWD" property="userPwd" jdbcType="VARCHAR" />
+        <result column="ORG_ID" property="orgId" jdbcType="VARCHAR" />
+        <result column="U_PHONE" property="uPhone" jdbcType="VARCHAR" />
+        <result column="USER_NAME" property="userName" jdbcType="VARCHAR" />
+        <result column="OPENID" property="openid" jdbcType="VARCHAR" />
+        <result column="TENANT_ID" property="tenantId" jdbcType="CHAR" />
+        <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+        <result column="USER_ROLE" property="userRole" jdbcType="CHAR" />
+        <result column="USER_SEX" property="userSex" jdbcType="VARCHAR" />
+        <result column="USER_IDCAR" property="userIdcar" jdbcType="VARCHAR" />
+        <result column="TERMINAL" property="terminal" jdbcType="VARCHAR" />
+        <result column="LAST_LOGIN_DATE" property="lastLoginDate" jdbcType="TIMESTAMP" />
+        <result column="TOTAL" property="total" jdbcType="INTEGER" />
+        <result column="IS_ENABLE" property="isEnable" jdbcType="VARCHAR" />
+        <result column="DEPT_ID" property="deptId" jdbcType="VARCHAR" />
+        <result column="SCHOOL" property="school" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <!-- list查询 -->
+    <select id="getList"  parameterType="java.util.Map" resultMap="BaseResultMap">
+        SELECT USER_ID,USER_LOGIN FROM asd_user_account <include refid="findWhere" />
+    </select>
+
+    <!-- where 条件 -->
+    <sql id="findWhere">
+        <where>
+            <if test="userLogin != null and userLogin != ''">
+                AND USER_LOGIN LIKE CONCAT('%',#{userLogin},'%')
+            </if>
+        </where>
+    </sql>
+</mapper>

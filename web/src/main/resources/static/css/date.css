@@ -1,0 +1,64 @@
+*{margin:0;padding:0;}
+html,body{height:100%}
+  	 
+/**日历 S*/
+#dateJs,#yearJs{width:252px;height:310px;background:#fff;box-shadow:0px 0px 4px #aaa;font-family:"冬青黑体简体中文 w3";}
+#dateJs .dataTitle,#yearJs .dataTitle{width:100%;height:50px;}
+#dateJs .dataTitle .t_data a,#yearJs .dataTitle .t_data a{text-decoration:none;width:167px;height:40px;float:left;color:#888;font-size:22px;font-weight:700;padding: 10px 0 0 10px;}
+#dateJs .dataTitle .t_caozuo,#yearJs .dataTitle .t_caozuo{width:65px;height:40px;float:right;padding:10px 0 0 10px;}
+#dateJs .dataTitle .t_caozuo a,#yearJs .dataTitle .t_caozuo a{text-decoration:none;display:block;width:20px;height:20px;border:1px solid #888;color:#888;text-align:center;font-size:20px;line-height:20px;float:left;margin-right:10px;}
+#dateJs .dataTitle .t_caozuo a:hover,#yearJs .dataTitle .t_caozuo a:hover{color:red;border:1px solid red;}
+
+#dateJs .riqi,#yearJs .riqi{width:100%;height:260px;}
+#dateJs .riqi .qi_title{width:100%;height:36px;}
+#dateJs .riqi .qi_title li{list-style:none;width:36px;height:36px;height:36px;line-height:36px;float:left;text-align:center;color:#888;}
+#dateJs .riqi .qi_con,#yearJs .riqi .qi_con{width:100%;height:224px;}
+#dateJs .riqi .qi_con ul{display:none;}
+#dateJs .riqi .qi_con li{list-style:none;width:36px;height:36px;line-height:36px;float:left;text-align:center;}
+#dateJs .riqi .qi_con li .hong{width:36px;height:36px;background:url("../images/check.png");background-position:1px;color:red;font-size:16px;}
+#dateJs .riqi .qi_con li,#yearJs .qi_con li{cursor:pointer;}
+
+
+#dateJs .riqi .qi_year li{list-style:none;width:62px;height:61px;line-height:62px;float:left;text-align:center;color:#888;}
+.hui{color:#888;}
+/**日历 E*/
+
+/**日历年  S*/
+#yearJs .qi_con li{list-style:none;width:62px;height:62px;height:62px;line-height:62px;float:left;text-align:center;color:#888;}
+#dateJs .riqi ul li{font-size:16px;}
+/**日历年  E*/
+
+/**动画 S*/
+.container{  
+ position:absolute;
+ display:none;
+}  
+.container > div{  
+    position: absolute;
+    top: 0;  
+    left: 0;  
+    -webkit-transition: 1s ease-in-out;  
+    -moz-transition: 1s ease-in-out;
+    -ms-transition: 1s ease-in-out;  
+    -o-transition: 1s ease-in-out;  
+    transition: 1s ease-in-out;  
+}
+.container #dateJs{  
+    -moz-transform-style: preserve-3d;  
+    -moz-backface-visibility: hidden;  
+    -webkit-transform-style: preserve-3d;  
+    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;  
+    ckface-visibility: hidden;
+}  
+.container #yearJs{  
+    -moz-transform-style: preserve-3d;  
+    -moz-backface-visibility: hidden;/*抖动*/  
+    -webkit-transform-style: preserve-3d;  
+    -webkit-backface-visibility: hidden;
+    -moz-transform: rotateY(-180deg);  
+    -webkit-transform: rotateY(-180deg);  
+    backface-visibility: hidden;/*抖动*/   
+    transform: rotateY(-180deg); 
+}  
+/**动画 E*/
