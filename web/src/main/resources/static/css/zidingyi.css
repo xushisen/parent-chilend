@@ -1,0 +1,125 @@
+/**
+ *一、最大宽度Max Width
+ *<link rel="stylesheet" media="screen and (max-width:600px)" href="small.css" type="text/css" />
+ *上面表示的是：当屏幕小于或等于600px时，将采用small.css样式来渲染Web页面。
+ *二、最小宽度Min Width
+ *<link rel="stylesheet" media="screen and (min-width:900px)" href="big.css" type="text/css"  />
+ *上面表示的是：当屏幕大于或等于900px时，将采用big.css样式来渲染Web页面。
+ *三、多个Media Queries使用
+ *<link rel="stylesheet" media="screen and (min-width:600px) and (max-width:900px)" href="style.css" type="text/css" />
+ */
+
+*{margin:0px;padding:0px;font-size:12px;}
+
+html,body{height:100%;overflow:hidden;font:normal 14px "Microsoft Yahei","冬青黑体简体中文 w3","宋体";}  /**font后面是字体样式 灰常好看这样高100%才会起作用  这里的overflow:hidden 只是为了更换皮肤弹出的更换成功发框会撑大body 出现一瞬间的滚动条 暂时没有发现别的东西*/
+/**index页面的css开始*/
+.indexTop{width:100%;height:65px;}
+.indexZhong{width:100%;height:calc(100% - 95px);}  /**height:85%*/
+.indexZhong .left{width:200px;height:100%;float:left;}  /**width:15%;*/
+.indexZhong .left a{text-decoration:none;}
+.indexZhong .right{width:calc(100% - 210px);height:100%;float:left;position:relative;border-radius:10px 10px 0 0;-webkit-border-radius:10px 10px 0 0;-moz-border-radius:10px 10px 0 0;overflow:hidden;}
+.indexZhong .right_right{width:10px;height:100%;float:right;}
+.indexZhong .right iframe{width:100%;height:100%;background:#fff;}
+.indexButton{width:100%;height:30px;background:pink;position:relative;}
+.indexButton span{width:210px;height:15px;display:block;position:absolute;top:50%;left:50%;margin-top:-7px;margin-left:-105px;background:linear-gradient(45deg,red,green,blue,purple);color:transparent;-webkit-background-clip:text;}
+/**index页面的css结束  color:#fff; 时间插件冲突 先去了  text-align:center; 树插件冲突了 先去了*/
+#menu a,li{list-style:none;}
+#menu{width:100%;height:100%;overflow:auto;}
+#menu > li ul{display:none;}
+#menu > li{line-height:30px;}
+#menu > li > a{font-size:14px;width:100%;display:block;}
+#menu > li > ul > li a{font-size:12px;}
+#menu li{border-bottom:1px solid rgba(255,255,255,.5);transition:background 1s;-moz-transition:background 1s;-webkit-transition:background 1s;-o-transition:background 1s;}
+#menu li > ul >li:first-child{border-top:1px solid rgba(255,255,255,.5);}
+#menu > li > ul > li:hover{cursor:pointer;background:rgba(255,255,255,.3)}
+
+/**自适应  S*/
+@media only screen and (max-width:800px){.indexZhong .left{display:none;}.indexZhong .right{width:calc(100% - 10px);}}
+/**自适应  E*/
+
+/**十字架开始*/
+.szj{width:10px;height:10px;position:relative;float:right;margin-top:10px;margin-right:10px;}
+.szj .h{height:10px;width:3px;background:#fff;position:absolute;left:5px;}
+.szj .w{height:3px;width:10px;background:#fff;position:absolute;top:4px;left:2px;}
+/**十字架结束*/
+/**left 菜单结束*/
+
+/**top 开始*/
+marquee{width:calc(100% - 200px);float:right;margin-top:10px;animation:ziti 2s linear infinite;}
+.name{width:70px;position:absolute;right:120px;top:40px;font-size:14px;color:#fff;text-align:center;}/**float:right;margin-top:5px;*/
+.name:hover{cursor:pointer;}
+.n_xx{display:none;width:70px;position:fixed;top:60px;right:120px;border:1px solid #e1e1e1;background:#fff;box-shadow:0 0 8px rgba(0,0,0,0.15);z-index:1;}
+.n_xx ul li{list-style:none;height:25px;border-bottom: 1px solid #e1e1e1;line-height:25px;text-align:center;}
+.n_xx ul li:hover a{color:red;}
+.n_xx ul li a{width:90%;height:100%;text-decoration:none;color:#434649;}
+.cz{width:100px;height:20px;position:absolute;top:40px;right:20px;}
+.cz a{text-decoration:none;font-size:14px;display:block;float:right;margin-right:10px;color:#fff;}
+.logo{width:146px;height:52px;position:absolute;left:30px;top:10px;}
+
+@keyframes ziti{
+	0%{color:red;}
+	20%{color:green;}
+	40%{color:blue;}
+	60%{color:prik;}
+	80%{color:yellow;}
+	100%{color:#f458fd;}
+} 
+/**top 结束*/
+
+/**换肤开始*/
+.index_hf{display:none;width:100%;height:200px;position:absolute;bottom:0px;left:0px;filter:alpha(opacity=70);background-color:#777;opacity:0.7;-moz-opacity:0.7;}
+.index_hf_img{display:none;width:100%;height:200px;z-index:1;position:absolute;bottom:0px;left:0px;}
+.index_hf_img ul{margin:20px 0 0 50px;}
+.index_hf_img ul li{width:200px;height:100px;float:left;margin:5px;position:relative;}
+.index_hf_img ul li .xuanzhong{width:100%;height:100%;background:rgba(122,122,122,.7);position:absolute;top:0;left:0;}
+.index_hf_img ul li span{width:24px;height:24px;background:url("../images/duihao.png");position:absolute;top:0;left:0;right:0;bottom:0;margin:auto;border-radius:10px;}
+.index_hf_img ul li:hover{box-shadow:0 0 10px #eee;cursor:pointer;}
+.index_hf_img .index_hf_butt{float:right;margin-right:200px;margin-top:50px;}
+.index_hf_img .index_hf_butt a{float:left;margin-right:10px;font-size:16px;font-family:"微软雅黑";width:80px;height:30px;display:block;text-decoration:none;text-align:center;line-height:30px;border-radius:5px;}
+.index_hf_img .index_hf_butt a:nth-child(1){background:#3B8CFF;color:#fff;}
+.index_hf_img .index_hf_butt a:nth-child(2){background:#fff;color:#947F8D;}
+/**换肤结束*/
+
+/**滚动条美化开始*/
+::-webkit-scrollbar{width:8px;height:6px;background:#eee}  /**滚动条整体部分*/
+::-webkit-scrollbar-button{background-color:#eee}/**滚动条的轨道的两端按钮，允许通过点击微调小方块的位置*/
+::-webkit-scrollbar-track{background:#eee}/**滚动条的轨道（里面装有Thumb）*/
+::-webkit-scrollbar-track-piece{background:#eee}/**内层轨道，滚动条中间部分（除去）*/
+::-webkit-scrollbar-thumb{background:#aaa;border-radius:4px;}/**滚动条里面的小方块，能向上向下移动（或往左往右移动，取决于是垂直滚动条还是水平滚动条）*/
+::-webkit-scrollbar-corner{background:#82afff}/**边角，即两个滚动条的交汇处*/
+::-webkit-scrollbar-resizer{background:#ff0bee}/**两个滚动条的交汇处上用于通过拖动调整元素大小的小控件*/
+/**滚动条美化结束*/
+
+/**start 弹出框*/
+.alert{width:360px;height:180px;position:fixed;margin-top:-90px;margin-left:-180px;overflow:hidden;border-radius:5px;}
+/**弹出框头*/
+.alert .alertTitle{width:100%;height:50px;background:#F4F4F4;line-height:50px;border-bottom:1px solid #e4e4e4;}
+.alert .alertTitle:hover{cursor:move;}
+.alert .alertTitle p{font-size:14px;margin-left:20px;color:black;float:left;}
+.alert .alertTitle span{float:right;margin:14px 15px 0 0;font-size:16px;display:block;width:22px;height:22px;background:url("../images/cha.png");transition:background 0.3s;-moz-transition:background 0.3s;-webkit-transition:background 0.3s;-o-transition:background 0.3s;} /**border-radius:16px;text-align:center;line-height:16px;margin-top:5px;color:black;*/
+.alert .alertTitle span:hover{cursor:pointer;background-position:-22px 0;} /**background:red;*/
+.alert .alertContent{width:100%;height:130px;background:#FFF;}
+/**弹出框内容*/
+.alert .alertContent .content{width:100%;height:70px;text-align:center;color:black;font-size:16px;line-height:70px;}
+/**弹出框按钮*/
+.alert .alertContent .contentBu{width:100%;height:60px;}
+.alert .alertContent .contentBu a{text-decoration:none;width:70px;height:30px;display:block;background:#5580fb;text-align:center;line-height:30px;color:#fff;border-radius:5px;margin:0px auto;}
+/**提示框按钮*/
+.alert .alertContent .contentBuTs{width:70%;height:40px;margin:0 auto;}
+.alert .alertContent .contentBuTs a{text-decoration:none;width:70px;height:30px;display:block;float:left;background:#5580fb;text-align:center;line-height:30px;margin-left:40px;color:#fff;border-radius:5px;}
+.alert .alertContent .contentBuTs a:nth-child(2){background:#cacaca;}
+/**遮罩层*/
+.mask{width:100%;height:100%;position:fixed;top:0px;filter:alpha(opacity=70);background-color:#2D373C;left:0px;opacity:0.7;-moz-opacity:0.7;}
+/**end 弹出框*/
+
+/**start input下拉开始*/
+#pin ul{background:#666;}
+#pin li{list-style:none;line-height:28px;padding-left:10px;}
+#pin li:hover{background-color:#888;cursor:pointer}
+#pin .add{background-color:red;}
+
+/**start 拼出的下来框的样式*/
+.kuang{width:500px;height:100px;border:1px solid #467ca2;float:left;overflow:auto;background:#fff;}
+.kuang a{display:block;padding-left:12px;color:#333;text-decoration:none;}
+/**end 拼出的下来框的样式*/
+/*end input下拉结束**/

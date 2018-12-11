@@ -1,0 +1,39 @@
+body{font-size:14px;color:#333;font-family:Verdana, Arial, Helvetica, AppleGothic, sans-serif;}
+ul li{list-style:none;}
+.ztree{margin:0;padding:5px;color:#333}
+.ztree li span.button{line-height:0;margin:0;padding:0;width:21px;height:21px;display:inline-block;vertical-align:middle;
+    border:0 none;cursor:pointer;outline:none;background-color:transparent;background-repeat:no-repeat;background-attachment:scroll;background-image: url("../images/tree/tree.png")}
+.ztree li span.button.switch{width:21px;height:21px;}
+.ztree li span.button.chk{width:13px;height:13px;margin:0 -2px;cursor:auto;}
+/**最前面的加号*/
+.ztree li span.button.roots_open{background-position:-105px 0;}
+/**最前面的减号*/
+.ztree li span.button.roots_close{background-position:-126px 0;}
+/**最前面的减号的最后一个加号*/
+.ztree li span.button.bottom_close{background-position:-126px -42px;}
+/**最前面的减号的最后一个减号*/
+.ztree li span.button.bottom_open{background-position:-105px -42px;}
+/**加号后面的蓝色方框复选框不选中*/
+.ztree li span.button.chk.checkbox_false_full{background-position:-5px -5px;}
+/**加号后面的蓝色方框复选框选中*/
+.ztree li span.button.chk.checkbox_true_full{background-position:-26px -5px;}
+/**复选框不能选中 默认不选中*/
+.ztree li span.button.chk.checkbox_readonly_notcheck{background-position:-5px -89px;}
+/**复选框不能选中 默认选中*/
+.ztree li span.button.chk.checkbox_readonly_check{background-position:-26px -89px;}
+/**文件夹打开图标*/
+.ztree li span.button.ico_open{margin-right:2px;background-position:-147px -21px;vertical-align:top;}
+/**文件夹关闭图标*/
+.ztree li span.button.ico_close{margin-right:2px;margin-right:2px;background-position:-147px 0;vertical-align:top;}
+/**二层立面的虚线*/
+.ztree li span.button.center_docu{background-position: -84px -21px;}
+/**二层立面的文件夹图标*/
+.ztree li span.button.ico_docu{margin-right:2px;background-position:-147px -43px;vertical-align:top;}
+/**二层虚线最后一个*/
+.ztree li span.button.bottom_docu{background-position:-84px -42px;}
+.ztree li ul.line {background:url("../images/tree/line_conn.png") 0 0 repeat-y;}
+.ztree li ul{margin:0;padding:0 0 0 18px;}
+.ztree li a{padding-right:3px;margin:0;cursor:pointer;height:21px;color:#333;background-color:transparent;text-decoration:none;
+    vertical-align:top;display:inline-block;}
+.none{display:none;}
+.ztree .xz{background:red;color:#fff;}

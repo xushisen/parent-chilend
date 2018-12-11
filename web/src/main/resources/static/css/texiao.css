@@ -1,0 +1,146 @@
+ /**加载动画的关键帧开始*/
+@-webkit-keyframes stretchdelay {
+    0%, 40%, 100% {
+	    -webkit-transform:scaleY(0.4);
+	    transform:scaleY(0.4);
+    } 
+    20% {
+	    -webkit-transform:scaleY(1.0);
+	    transform: scaleY(1.0);
+    }
+}
+ 
+@keyframes stretchdelay {
+    0%,40%,100%{
+      transform: scaleY(0.4);
+      -webkit-transform: scaleY(0.4);
+    } 
+    20%{
+      transform: scaleY(1.0);
+      -webkit-transform: scaleY(1.0);
+   }
+}
+/**加载动画的关键帧结束*/
+
+/**弹出框动画开始  从左到中间  抖动形式*/
+@-webkit-keyframes tckdhLeft{
+    0%{margin-left:0px;}
+    30%{transform:rotate(20deg);-webkit-transform:rotate(20deg);}
+	40%{transform:rotate(-20deg);-webkit-transform:rotate(-20deg);}
+	50%{transform:rotate(20deg);-webkit-transform:rotate(20deg);}
+	60%{transform:rotate(-20deg);-webkit-transform:rotate(-20deg);}
+    100%{margin-left:50%;}
+}
+@keyframes tckdhLeft{
+	0%{margin-left:0px;}
+	30%{transform:rotate(20deg);-webkit-transform:rotate(20deg);}
+	40%{transform:rotate(-20deg);-webkit-transform:rotate(-20deg);}
+	50%{transform:rotate(20deg);-webkit-transform:rotate(20deg);}
+	60%{transform:rotate(-20deg);-webkit-transform:rotate(-20deg);}
+    100%{margin-left:50%;}
+}
+/**弹出框动画结束  从左到中间  抖动形式*/
+
+/**弹出框动画开始  从上到中间  抖动形式*/
+@-webkit-keyframes tckdhTop{
+    0%{margin-top:0px;}
+    30%{transform:rotate(20deg);-webkit-transform:rotate(20deg);}
+	40%{transform:rotate(-20deg);-webkit-transform:rotate(-20deg);}
+	50%{transform:rotate(20deg);-webkit-transform:rotate(20deg);}
+	60%{transform:rotate(-20deg);-webkit-transform:rotate(-20deg);}
+    100%{margin-top:250px;}
+}
+@keyframes tckdhTop{
+	0%{margin-top:0px;}
+	30%{transform:rotate(20deg);-webkit-transform:rotate(20deg);}
+	40%{transform:rotate(-20deg);-webkit-transform:rotate(-20deg);}
+	50%{transform:rotate(20deg);-webkit-transform:rotate(20deg);}
+	60%{transform:rotate(-20deg);-webkit-transform:rotate(-20deg);}
+    100%{margin-top:250px;}
+}
+/**弹出框动画结束 从上到中间  抖动形式*/
+
+/**弹出框动画开始  从左到中间  抖动形式*/
+@-webkit-keyframes tckdhRight{
+    0%{margin-right:0px;}
+    30%{transform:rotate(20deg);-webkit-transform:rotate(20deg);}
+	40%{transform:rotate(-20deg);-webkit-transform:rotate(-20deg);}
+	50%{transform:rotate(20deg);-webkit-transform:rotate(20deg);}
+	60%{transform:rotate(-20deg);-webkit-transform:rotate(-20deg);}
+    100%{margin-right:50%;}
+}
+@keyframes tckdhRight{
+	0%{margin-right:0px;}
+	30%{transform:rotate(20deg);-webkit-transform:rotate(20deg);}
+	40%{transform:rotate(-20deg);-webkit-transform:rotate(-20deg);}
+	50%{transform:rotate(20deg);-webkit-transform:rotate(20deg);}
+	60%{transform:rotate(-20deg);-webkit-transform:rotate(-20deg);}
+    100%{margin-right:50%;}
+}
+/**弹出框动画结束  从左到中间  抖动形式*/
+
+/**弹出框动画开始  从上到中间  抖动形式*/
+@-webkit-keyframes tckdhBottom{
+    0%{margin-bottom:0px;}
+    30%{transform:rotate(20deg);-webkit-transform:rotate(20deg);}
+	40%{transform:rotate(-20deg);-webkit-transform:rotate(-20deg);}
+	50%{transform:rotate(20deg);-webkit-transform:rotate(20deg);}
+	60%{transform:rotate(-20deg);-webkit-transform:rotate(-20deg);}
+    100%{margin-bottom:250px;}
+}
+@keyframes tckdhBottom{
+	0%{margin-bottom:0px;}
+	30%{transform:rotate(20deg);-webkit-transform:rotate(20deg);}
+	40%{transform:rotate(-20deg);-webkit-transform:rotate(-20deg);}
+	50%{transform:rotate(20deg);-webkit-transform:rotate(20deg);}
+	60%{transform:rotate(-20deg);-webkit-transform:rotate(-20deg);}
+    100%{margin-bottom:250px;}
+}
+/**弹出框动画结束 从上到中间  抖动形式*/
+
+/**弹出框中间开始*/
+@-webkit-keyframes tckZhong{
+    0%{transform:rotate(0deg) scale(2);-webkit-transform:rotate(0deg) scale(2);}
+	100%{transform:rotate(360deg) scale(1);-webkit-transform:rotate(360deg) scale(1);}
+}
+@keyframes tckZhong{
+    0%{transform:rotate(0deg) scale(2);-webkit-transform:rotate(0deg) scale(2);}
+	100%{transform:rotate(360deg) scale(1);-webkit-transform:rotate(360deg) scale(1);}
+}
+/**弹出框中间结束*/
+
+@-webkit-keyframes messageBoxDown{
+	0%{transform:translate(-50%,-30%)}
+	100%{transform:translate(-50%,100%)}
+}
+@keyframes messageBoxDown{
+	0%{transform:translate(-50%,-30%)}
+	100%{transform:translate(-50%,100%)}
+}
+
+@-webkit-keyframes messageBoxUp{
+	0%{transform:translate(-50%,100%)}
+	100%{transform:translate(-50%,-100%)}
+}
+@keyframes messageBoxUp{
+	0%{transform:translate(-50%,100%)}
+	100%{transform:translate(-50%,-100%)}
+}
+
+/** websocket 动画S */
+ @keyframes websocketUp{
+	 0%{bottom:-100px}
+	 100%{bottom:10px;}
+ }
+
+ @-webkit-keyframes websocketUp{
+	 0%{bottom:-100px}
+	 100%{bottom:10px;}
+ }
+ /** websocket 动画E */
+
+/**a链接美化开始*/
+.jdt{border-radius:4px;display:block;width:60px;height:20px;background:linear-gradient(to right,red,yellow,blue);color:#fff;font-size:8px;text-align:center;line-height:20px;text-decoration:none;}
+/**a链接美化结束*/
+
+
