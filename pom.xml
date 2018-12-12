@@ -17,6 +17,7 @@
         <module>service</module>
         <module>dao</module>
         <module>entity</module>
+        <module>zuul</module>
     </modules>
 
     <parent>
