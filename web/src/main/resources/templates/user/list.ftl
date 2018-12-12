@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <link rel="stylesheet" type="text/css" href="${ctx.contextPath}/css/biaoge.css"/>
-    <link rel="stylesheet" type="text/css" href="${ctx.contextPath}/css/zidingyi.css"/>
-    <link rel="stylesheet" type="text/css" href="${ctx.contextPath}/css/texiao.css"/>
-    <link rel="stylesheet" type="text/css" href="${ctx.contextPath}/awesome/css/font-awesome.min.css">
-    <link rel="shortcut icon" href="${ctx.contextPath}/images/ico/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="${path}/css/biaoge.css"/>
+    <link rel="stylesheet" type="text/css" href="${path}/css/zidingyi.css"/>
+    <link rel="stylesheet" type="text/css" href="${path}/css/texiao.css"/>
+    <link rel="stylesheet" type="text/css" href="${path}/awesome/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="${path}/images/ico/favicon.ico" type="image/x-icon">
     <style type="text/css">
         body{overflow:auto;}
     </style>
@@ -66,11 +66,11 @@
     <@page count="${list.page.count?c}" page="${list.page.pagebegin?c}" pagesize="${list.page.pagesize?c}">${pages}</@page>
     ${js}
 
-    <script type="text/javascript" src="${ctx.contextPath}/js/jquery/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="${ctx.contextPath}/js/util/biaoge.min.js"></script>
-    <script type="text/javascript" src="${ctx.contextPath}/js/util/alert.min.js"></script>
-    <script type="text/javascript" src="${ctx.contextPath}/js/util/tcUtil.min.js"></script>
-    <script type="text/javascript" src="${ctx.contextPath}/js/util/util.js"></script>
+    <script type="text/javascript" src="${path}/js/jquery/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="${path}/js/util/biaoge.min.js"></script>
+    <script type="text/javascript" src="${path}/js/util/alert.min.js"></script>
+    <script type="text/javascript" src="${path}/js/util/tcUtil.min.js"></script>
+    <script type="text/javascript" src="${path}/js/util/util.js"></script>
 
     <script type="text/javascript">
         $(parent.window.document.body).find(".mask").remove();//取消遮罩层
