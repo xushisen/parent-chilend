@@ -12,6 +12,8 @@ producer 模拟微服务调用的提供方的工程  默认 yml 8888 server1 888
 
 consumer 模拟微服务调用的调用方的工程  9999
 
+config 配置中心  8901
+
 zuul 5000
 
 web 前端项目
