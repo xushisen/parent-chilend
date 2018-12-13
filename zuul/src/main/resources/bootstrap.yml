@@ -1,0 +1,10 @@
+# 配置登录用户名密码
+spring:
+  application:
+    name: zuul
+  cloud:
+    config:
+      username: ssxu
+      password: 666666
+      uri: http://localhost:8091
+      profile: dev

@@ -1,21 +1,21 @@
-server:
-  port: 9999
-
-spring:
-  application:
-    name: consumer
-
-eureka:
-  instance:
-    # true 使用IP注册
-    preferIpAddress: true
-    # 心跳间隔
-    lease-renewal-interval-in-seconds: 3
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-
-feign:
-  hystrix:
-    # fegin fallback
-    enabled: true
+#server:
+#  port: 9999
+#
+#spring:
+#  application:
+#    name: consumer
+#
+#eureka:
+#  instance:
+#    # true 使用IP注册
+#    preferIpAddress: true
+#    # 心跳间隔
+#    lease-renewal-interval-in-seconds: 3
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka/
+#
+#feign:
+#  hystrix:
+#    # fegin fallback
+#    enabled: true
