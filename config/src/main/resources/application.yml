@@ -30,7 +30,3 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
-
-encrypt:
-  # 加解密用的秘钥
-  key: 12345678
