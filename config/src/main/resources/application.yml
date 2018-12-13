@@ -1,0 +1,36 @@
+server:
+  port: 8091
+
+spring:
+  # 安全认证
+  security:
+    user:
+      name: ssxu
+      password: 666666
+
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          # 服务的git仓库地址
+          # uri: https://gitee.com/self__made_sentimental/myspringconfig`
+          uri: https://github.com/xushisen/springcloudconfig
+          # 配置文件所在的目录
+          search-paths: /**
+      # 配置文件所在的分支
+      label: master
+      # git仓库的用户名
+      # username: 1239495896@qq.com
+      # git仓库的密码
+      # password： Xs940224
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+encrypt:
+  # 加解密用的秘钥
+  key: 12345678
