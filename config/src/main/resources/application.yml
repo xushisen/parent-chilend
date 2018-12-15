@@ -7,6 +7,11 @@ spring:
     user:
       name: ssxu
       password: 666666
+  rabbitmq:
+    host: 192.168.1.41
+    port: 5672
+    username: admin
+    password: admin
 
   application:
     name: config-server
@@ -19,6 +24,8 @@ spring:
           uri: https://github.com/xushisen/springcloudconfig
           # 配置文件所在的目录
           search-paths: /**
+          # git 存在本地的地址 不然老是保存c盘
+          basedir: "D:\\gitconfig\\"
       # 配置文件所在的分支
       label: master
       # git仓库的用户名
@@ -30,3 +37,9 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
