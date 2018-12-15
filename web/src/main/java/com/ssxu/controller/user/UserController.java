@@ -2,8 +2,11 @@ package com.ssxu.controller.user;
 
 import com.ssxu.controller.BaseController;
 import com.ssxu.service.user.UserService;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -18,7 +21,11 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping("/user")
+@RefreshScope
 public class UserController extends BaseController {
+
+    @Value("${name}")
+    private String name;
 
     @Resource
     private UserService userService;
@@ -34,5 +41,11 @@ public class UserController extends BaseController {
         logger.info("进入了userList");
         map.put("list", userService.getList(getRequestParams(request)));
         return "user/list";
+    }
+
+    @RequestMapping("/getName")
+    @ResponseBody
+    public String getName(){
+        return name;
     }
 }
