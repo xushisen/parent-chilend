@@ -1,5 +1,8 @@
 package com.ssxu.util;
 
+import com.ssxu.sso.Client;
+
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -29,6 +32,23 @@ public class ListUtils {
      */
     public static boolean isNotEmpty(List<?> list) {
         return !isEmpty(list);
+    }
+
+    /**
+     * SSO校验list里面是否有存在该地址的退出对象 有的话移出  因为每次的sessionId都不一样  移出原先的重新添加新的
+     *
+     * @param clients 退出地址对象集合
+     * @param url     url
+     */
+    public static void isEmptySSO(List<Client> clients, String url) {
+        Iterator<Client> iterator = clients.iterator();
+        while (iterator.hasNext()) {
+            Client client = iterator.next();
+            if (client.getUrl().equals(url)) {
+                iterator.remove();
+                break;
+            }
+        }
     }
 
 }
