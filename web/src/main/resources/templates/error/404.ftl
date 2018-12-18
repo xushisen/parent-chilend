@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <link rel="shortcut icon" href="${ctx.contextPath}/images/ico/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="${path}/images/ico/favicon.ico" type="image/x-icon">
     <title>404错误页面</title>
     <style type="text/css">
         *{margin:0;padding:0;}
@@ -22,7 +22,7 @@
 </head>
 <body>
 <div class="title">
-    <img src="${ctx.contextPath}/images/error/404.png" width="442" height="174" alt="404" />
+    <img src=""${path}/images/error/404.png" width="442" height="174" alt="404" />
 </div>
 <div class="zi">
     <span class="ayy">哎呀呀!&nbsp;&nbsp;您访问的页面不知道"去哪了"</span>
@@ -30,7 +30,7 @@
 </div>
 <div class="butt">
     <div class="butt_cen">
-        <img src="${ctx.contextPath}/images/error/jiong.png" width="73" height="75" alt="jiong" />
+        <img src="${path}/images/error/jiong.png" width="73" height="75" alt="jiong" />
         <div class="butt_cen_con">
             <span>可能出现了以下问题:</span>
             <ul>
@@ -41,8 +41,8 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="${ctx.contextPath}/js/jquery/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="${ctx.contextPath}/js/util/util.js"></script>
+<script type="text/javascript" src="${path}/js/jquery/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="${path}/js/util/util.js"></script>
 <script type="text/javascript">
     if(window!=top){top.location.href=location.href;}
     $("#back").click(function (){
