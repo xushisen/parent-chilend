@@ -1,6 +1,7 @@
 package com.ssxu;
 
 import com.ssxu.entity.Ajax;
+import com.ssxu.util.StaticVariable;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,13 +23,13 @@ public class Producer {
 
     @RequestMapping("/getData")
     @ResponseBody
-    public Ajax getData(String params){
+    public Ajax<String> getData(String params) {
         StringBuilder sb = new StringBuilder();
         sb.append("我是生产者返回给消费者的数据====>>>");
         sb.append("客户端给的参数==");
         sb.append(params);
         sb.append("端口号=====>>>");
         sb.append(serverPort);
-        return AjaxUtil.success(sb.toString());
+        return new Ajax<>(StaticVariable.AJAXSUCCESS, sb.toString());
     }
 }
