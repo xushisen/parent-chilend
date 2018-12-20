@@ -11,10 +11,6 @@ public class Ajax<T> {
     private Integer code;
     private T data;
 
-    public Ajax() {
-
-    }
-
     public Ajax(Integer code, T data) {
         this.data = data;
         this.code = code;
