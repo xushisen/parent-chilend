@@ -1,7 +1,6 @@
 package com.ssxu.fegin;
 
 import com.ssxu.entity.Ajax;
-import com.ssxu.exception.AjaxUtil;
 import org.springframework.stereotype.Component;
 
 /**

@@ -2,9 +2,9 @@ package com.ssxu.util.aliyun;
 
 
 import com.ssxu.entity.Ajax;
-import com.ssxu.exception.AjaxUtil;
 import com.ssxu.exception.MyException;
 import com.ssxu.util.FileUtils;
+import com.ssxu.util.StaticVariable;
 import com.ssxu.util.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -53,7 +53,7 @@ public class VideoUpload {
      */
     @RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
     @ResponseBody
-    public Ajax uploadFile(MultipartHttpServletRequest multiReq) {
+    public Ajax<String> uploadFile(MultipartHttpServletRequest multiReq) {
 
         MultipartFile reqFile = multiReq.getFile("file");
         // 格式的校验key
@@ -113,7 +113,8 @@ public class VideoUpload {
                     new File(newFileName), aliyunPath + path + nowDateStr + "/");
         } catch (IOException e) {
             e.printStackTrace();
-            return AjaxUtil.error("上传文件失败。");
+            //return AjaxUtil.error("上传文件失败。");
+            return new Ajax<>(StaticVariable.AJAXERROR, "上传文件失败。");
         } finally {
             if (fis != null) {
                 try {
@@ -135,6 +136,7 @@ public class VideoUpload {
         // 更新进度删除数据
         ProgressSingleton.remove(uploadFileName);
         // 经过处理的视频  全部都转成了.mp4格式的
-        return AjaxUtil.success(aliyunFileName);
+        //return AjaxUtil.success(aliyunFileName);
+        return new Ajax<>(StaticVariable.AJAXSUCCESS, aliyunFileName);
     }
 }

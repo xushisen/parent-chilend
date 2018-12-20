@@ -1,7 +1,9 @@
 package com.ssxu.controller.user;
 
 import com.ssxu.controller.BaseController;
+import com.ssxu.entity.Ajax;
 import com.ssxu.service.user.UserService;
+import com.ssxu.util.StaticVariable;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Controller;
@@ -10,7 +12,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.List;
 
 /**
  * 类描述：usercontroller
@@ -47,5 +52,31 @@ public class UserController extends BaseController {
     @ResponseBody
     public String getName(){
         return name;
+    }
+
+    @RequestMapping("/getAjaxT")
+    @ResponseBody
+    public Ajax<List<Map<String, String>>> getAjax(){
+        List<Map<String, String>> list = new ArrayList<>();
+        Map<String, String> map;
+        for(int i = 0; i < 10; i++){
+            map = new HashMap<>();
+            map.put("hhh", "hhhh"+i);
+            list.add(map);
+        }
+        return new Ajax<>(StaticVariable.AJAXSUCCESS, list);
+    }
+
+    @RequestMapping("/getAjaxString")
+    @ResponseBody
+    public Ajax<String> getAjaxString(){
+        List<Map<String, String>> list = new ArrayList<>();
+        Map<String, String> map;
+        for(int i = 0; i < 10; i++){
+            map = new HashMap<>();
+            map.put("hhh", "hhhh"+i);
+            list.add(map);
+        }
+        return new Ajax<>(StaticVariable.AJAXSUCCESS, "成功");
     }
 }

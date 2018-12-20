@@ -1,6 +1,7 @@
 package com.ssxu.exception;
 
 import com.ssxu.entity.Ajax;
+import com.ssxu.util.StaticVariable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -43,8 +44,8 @@ public class ExceptionHandle {
      */
     @ExceptionHandler(value = MyException.class)
     @ResponseBody
-    public Ajax myExceptionHandle(MyException ex) {
-        return AjaxUtil.error(ex.getMessage());
+    public Ajax<String> myExceptionHandle(MyException ex) {
+        return new Ajax<>(StaticVariable.AJAXERROR, ex.getMessage());
     }
 
     /**
@@ -57,7 +58,7 @@ public class ExceptionHandle {
     @ResponseBody
     public Ajax Handle(Exception ex) {
         logger.error("^_^  [全局系统异常]{}----------{}", ex);
-        return AjaxUtil.error("^_^  出错啦!!!");
+        return new Ajax<>(StaticVariable.AJAXERROR, "^_^  出错啦!!!");
     }
 
 }
