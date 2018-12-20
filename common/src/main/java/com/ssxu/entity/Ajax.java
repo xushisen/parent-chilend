@@ -15,9 +15,6 @@ public class Ajax<T> {
 
     }
 
-    /**
-     * 成功的构造 没有msg
-     */
     public Ajax(Integer code, T data) {
         this.data = data;
         this.code = code;
