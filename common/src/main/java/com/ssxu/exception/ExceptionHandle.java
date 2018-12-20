@@ -56,7 +56,7 @@ public class ExceptionHandle {
      */
     @ExceptionHandler(value = Exception.class)
     @ResponseBody
-    public Ajax Handle(Exception ex) {
+    public Ajax<String> Handle(Exception ex) {
         logger.error("^_^  [全局系统异常]{}----------{}", ex);
         return new Ajax<>(StaticVariable.AJAXERROR, "^_^  出错啦!!!");
     }
