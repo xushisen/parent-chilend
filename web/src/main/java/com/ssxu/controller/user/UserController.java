@@ -70,13 +70,6 @@ public class UserController extends BaseController {
     @RequestMapping("/getAjaxString")
     @ResponseBody
     public Ajax<String> getAjaxString(){
-        List<Map<String, String>> list = new ArrayList<>();
-        Map<String, String> map;
-        for(int i = 0; i < 10; i++){
-            map = new HashMap<>();
-            map.put("hhh", "hhhh"+i);
-            list.add(map);
-        }
-        return new Ajax<>(StaticVariable.AJAXSUCCESS, "成功");
+        return new Ajax<>(StaticVariable.AJAXSUCCESS, "配置文件的name==="+name);
     }
 }
