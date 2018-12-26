@@ -4,7 +4,6 @@ import com.ssxu.controller.BaseController;
 import com.ssxu.entity.Ajax;
 import com.ssxu.exception.AjaxUtil;
 import com.ssxu.service.user.UserService;
-import com.ssxu.util.StaticVariable;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Controller;
@@ -15,8 +14,8 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 类描述：usercontroller
@@ -51,18 +50,18 @@ public class UserController extends BaseController {
 
     @RequestMapping("/getName")
     @ResponseBody
-    public String getName(){
+    public String getName() {
         return name;
     }
 
     @RequestMapping("/getAjaxT")
     @ResponseBody
-    public Ajax<List<Map<String, Object>>> getAjax(){
+    public Ajax<List<Map<String, Object>>> getAjax() {
         List<Map<String, Object>> list = new ArrayList<>();
         Map<String, Object> map;
-        for(int i = 0; i < 10; i++){
+        for (int i = 0; i < 10; i++) {
             map = new HashMap<>();
-            map.put("hhh", "hhhh"+i);
+            map.put("hhh", "hhhh" + i);
             list.add(map);
         }
         //return new Ajax<>(StaticVariable.AJAXSUCCESS, list);
@@ -71,8 +70,8 @@ public class UserController extends BaseController {
 
     @RequestMapping("/getAjaxString")
     @ResponseBody
-    public Ajax<String> getAjaxString(){
+    public Ajax<String> getAjaxString() {
         //return new Ajax<>(StaticVariable.AJAXSUCCESS, "配置文件的name==="+name);
-        return AjaxUtil.error("配置文件的name==="+name);
+        return AjaxUtil.error("配置文件的name===" + name);
     }
 }
