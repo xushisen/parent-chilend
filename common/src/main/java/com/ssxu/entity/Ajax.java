@@ -14,22 +14,11 @@ public class Ajax<T> {
     private String msg;
     private T data;
 
-    /**
-     * 错误的
-     *
-     * @param code code
-     * @param msg  msg
-     */
     public Ajax(Integer code, String msg) {
         this.msg = msg;
         this.code = code;
     }
 
-    /**
-     * 正确的
-     *
-     * @param data data
-     */
     public Ajax(T data) {
         this.data = data;
         this.code = StaticVariable.AJAXSUCCESS;

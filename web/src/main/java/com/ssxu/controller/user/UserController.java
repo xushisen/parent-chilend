@@ -2,8 +2,8 @@ package com.ssxu.controller.user;
 
 import com.ssxu.controller.BaseController;
 import com.ssxu.entity.Ajax;
-import com.ssxu.exception.AjaxUtil;
 import com.ssxu.service.user.UserService;
+import com.ssxu.util.StaticVariable;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Controller;
@@ -64,14 +64,12 @@ public class UserController extends BaseController {
             map.put("hhh", "hhhh" + i);
             list.add(map);
         }
-        //return new Ajax<>(StaticVariable.AJAXSUCCESS, list);
-        return AjaxUtil.successList(list);
+        return new Ajax<>(list);
     }
 
     @RequestMapping("/getAjaxString")
     @ResponseBody
     public Ajax<String> getAjaxString() {
-        //return new Ajax<>(StaticVariable.AJAXSUCCESS, "配置文件的name==="+name);
-        return AjaxUtil.error("配置文件的name===" + name);
+        return new Ajax<>(StaticVariable.AJAXSUCCESS, "配置文件的name==="+name);
     }
 }
