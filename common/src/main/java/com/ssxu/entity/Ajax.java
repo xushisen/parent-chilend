@@ -3,7 +3,7 @@ package com.ssxu.entity;
 import com.ssxu.util.StaticVariable;
 
 /**
- * 类描述：异步实体类 成功code 是1 失败 code 0 data不管成功失败都有值 失败是提示  成功是数据
+ * 类描述：异步实体类 成功code 是1 失败 code 0 msg 提示数据  data 页面需要的数据
  * 创建人：ssxu
  * 创建时间：2018-2-28 上午11:09:47
  *
