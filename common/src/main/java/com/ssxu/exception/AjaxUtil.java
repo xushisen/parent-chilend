@@ -21,7 +21,7 @@ public class AjaxUtil {
      * @param list List<Map<String,Object>> 正确时返回的提示
      * @return ajax
      */
-    public static Ajax<List<Map<String, Object>>> successData(List<Map<String, Object>> list) {
+    public static Ajax<List<Map<String, Object>>> successList(List<Map<String, Object>> list) {
         return new Ajax<>(list);
     }
 
@@ -31,7 +31,7 @@ public class AjaxUtil {
      * @param map Map<String,Object>
      * @return ajax
      */
-    public static Ajax<Map<String, Object>> successData(Map<String, Object> map) {
+    public static Ajax<Map<String, Object>> successMap(Map<String, Object> map) {
         return new Ajax<>(map);
     }
 

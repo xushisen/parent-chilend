@@ -65,7 +65,7 @@ public class UserController extends BaseController {
             list.add(map);
         }
         //return new Ajax<>(StaticVariable.AJAXSUCCESS, list);
-        return AjaxUtil.successData(list);
+        return AjaxUtil.successList(list);
     }
 
     @RequestMapping("/getAjaxString")
