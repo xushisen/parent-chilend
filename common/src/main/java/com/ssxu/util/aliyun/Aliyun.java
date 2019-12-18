@@ -35,14 +35,6 @@ public class Aliyun {
 
 	private static OSSClient ossClient;
 
-    /*// 上传操作手册   为了方便直接这里上传了  S
-    private static String bucketName = "zzjyoss";
-    private static String endpoint = "http://oss-cn-shenzhen.aliyuncs.com";
-    private static String accessKeyId = "LTAISAmeEIv2Cl8D";
-    private static String accessKeySecret = "Iq6yOiH80jpEGJI5w9zW5zm71QErZH";
-    private static String fileName = "manual.zip";
-    private static String aliyunPath = "authority/manual/";
-
     public static void main(String[] args) {
         try {
             BufferedReader strin = new BufferedReader(new InputStreamReader(System.in));
