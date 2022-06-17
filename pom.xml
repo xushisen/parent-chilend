@@ -34,7 +34,7 @@
         <java.version>1.8</java.version>
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
         <!-- 阿里json-->
-        <alibaba-json.version>1.2.32</alibaba-json.version>
+        <alibaba-json.version>1.2.83</alibaba-json.version>
         <!-- 阿里云上传 -->
         <alibaban-sdk.version>2.5.0</alibaban-sdk.version>
         <!-- excel 导入导出 -->
